@@ -1,0 +1,95 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buy_services
+  - redeem_points
+  - not_sure_check_offer
+  - check_shopping_offer
+  - check_dining_offer
+  - chose_merchant
+  - check_na_merchant
+  - check_spa_offer
+  - chat_rep
+  - name_provided
+  - email_provided
+
+
+entities: 
+  - service_type
+  - service_category
+  - merchant
+  - user_name
+  - user_email
+
+
+slots: 
+  service_type:
+    type: text
+  service_category:
+    type: text
+  merchant:
+    type: text
+  user_name:
+    type: text
+  user_email:
+    type: text
+
+responses:
+  utter_wc:
+  - text: "Hello ! Welcome to the Xoxoday Marketplace. I will be glad to assist you today. Would you like to redeem your points or just buy any of our offers?"
+  
+  utter_check_specific_service:
+  - text: "Sure ! Do you have specific categories of Products or Services in Mind ?"
+
+  utter_offers_categories:
+  - text: "We have vouchers and offers for the following categories - Dining Vouchers, Shopping Vouchers, Spa Vouchers and also some exclusive hot deals"
+
+  utter_offer_shopping_merchants:
+  - text: " Sure we have vouchers from stores where you can buy anything from the store using their vouchers. You can choose vouchers from any of the following stores - Shoppers Shop, Lifestyle, More, Amazon and Ajio"
+
+  utter_offer_dining_merchants:
+  - text: "Yes we do. We have dining offers for the following restaurants and hotels. Please choose any that you like. Hotels offering dining offers are - Mainland China, Taj Hotels, Marriott Hotels, ITC Windsor"
+  
+  utter_offer_spa_merchants:
+  - text: " Yes, We do have Spa offers. We have offers from the following Spas - Urban Clap, Four Fountains Spa, O2 Spa and Bodykraft. Which one would you like ?"
+  
+  utter_na_apologies_reoffer_dining:
+  - text:  "We are sorry - we don’t have offers from that Hotel. Would you like to choose from any of the following?  - Mainland China, Taj Hotels, Marriott Hotels, ITC Windsor "
+  
+  utter_conclude:
+  - text: "thanks, you chose: {service_type} , {service_category}, {merchant} "
+
+  utter_ask_name:
+  - text: " Sure, I can hand off this conversation to a customer service rep.  Before I do that, may I know your name?"
+
+
+  utter_greet_ask_email:
+  - text: " Great to meet you, {user_name}!  One last question, may I have your email address so that we can look up your account?"
+
+  utter_trasfer:
+  - text: "Awesome; transferring you to a rep now!"
+
+
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
